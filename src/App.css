@@ -1,31 +1,84 @@
+body {
+  margin: 0;
+}
+
 .outer-container {
   display: flex;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  color: rgb(47, 0, 255);
+  background-color: rgb(255, 254, 251);
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.central-div {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  background-color: whitesmoke;
-  position: relative;
+}
+
+.side-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .board {
   display: grid;
   height: 500px;
   width: 500px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: auto; /* Push board down */
-  margin-bottom: auto;
+  grid-template-rows: repeat(3fr 1);
+  gap: 0px;
+  margin-bottom: 80px;
+  gap: 0;
+  /* justify-self: center;
+  align-self: center;
+  position: absolute; */
+}
+
+.row {
+  display: flex;
+  flex: 1; /* Each row takes up equal space */
+  width: 100%;
 }
 
 .square {
-  color: black;
+  color: rgb(255, 254, 251);
+  background-image: url(./Assests/blue-texture.jpg);
+  height: 166.6px;
+  width: 166.6px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 100px;
-  background-color: whitesmoke;
+  font-size: 120px;
+  border-color: whitesmoke;
+  border-style: solid;
+  padding: 0px;
+  font-weight: bold;
+  aspect-ratio: 1;
 }
 
 .title {
-  margin-top: 100px;
-  margin-bottom: 20px; /* Space between title and board */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  font-weight: 20;
 }
