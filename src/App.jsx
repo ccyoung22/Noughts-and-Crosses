@@ -28,18 +28,40 @@ export default function Board() {
 
   const winner = calculateWinner(squares);
   let status;
+  let rightText;
+  let leftText;
   if (winner) {
-    status = "Winner: " + winner;
+    status = `${winner} WINS`;
+    rightText = "";
+    leftText = "";
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "";
+    xIsNext ? (leftText = "YOUR MOVE") : (rightText = "YOUR MOVE");
   }
+
+  //if winner is true
+  //status will display winner
+  //left side will be empty
+  //right side will be empty
+
+  //if isNext is null
+  //left side div will display Your move
+  //right side will be empty
+
+  //if isNext is true
+  // left side will be empty
+  //right side will display Your move
+
   return (
     <>
       <div className="outer-container">
-        <div className="side-div">left side</div>
+        <div className="side-div">
+          <p className="move-title">{leftText}</p>
+          <p className="x">X</p>
+        </div>
         <div className="central-div">
           <div className="title-div">
-            <h2 className="title">NOUGHTS AND CROSSES</h2>
+            <h2 className="title"></h2>
           </div>
           <div className="board">
             <div className="row">
@@ -60,7 +82,10 @@ export default function Board() {
           </div>
           <div className="status">{status}</div>
         </div>
-        <div className="side-div">right side</div>
+        <div className="side-div">
+          <p className="move-title">{rightText}</p>
+          <p className="o">O</p>
+        </div>
       </div>
     </>
   );
